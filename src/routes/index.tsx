@@ -4,20 +4,23 @@ import {
   ArrowLeft,
   ArrowRight,
   BadgeIndianRupee,
+  BadgeCheck,
   BedDouble,
   Building2,
+  CalendarCheck2,
   CheckCircle2,
   ChevronDown,
   Headphones,
   Heart,
   Home,
   House,
+  Armchair,
   LockKeyhole,
   MapPin,
   Menu,
-  Play,
   Search,
   ShieldCheck,
+  Tags,
   Users,
   UserRound,
   WalletCards,
@@ -29,6 +32,12 @@ import pgAsset from "@/assets/offer-pg.jpg.asset.json";
 import hostelAsset from "@/assets/offer-hostel.jpg.asset.json";
 import colivingAsset from "@/assets/offer-coliving.jpg.asset.json";
 import apartmentAsset from "@/assets/offer-apartment.jpg.asset.json";
+import kotaAsset from "@/assets/city-kota.jpg.asset.json";
+import jaipurAsset from "@/assets/city-jaipur.jpg.asset.json";
+import delhiAsset from "@/assets/city-delhi.jpg.asset.json";
+import indoreAsset from "@/assets/city-indore.jpg.asset.json";
+import bhopalAsset from "@/assets/city-bhopal.jpg.asset.json";
+import sikarAsset from "@/assets/city-sikar.jpg.asset.json";
 import { Button } from "@/components/ui/button";
 
 const heroImage = heroAsset.url;
@@ -73,10 +82,24 @@ const offers = [
   { title: "Apartments", text: "Spacious and independent living options.", image: apartmentImage, icon: House },
 ];
 
-const steps = [
-  { number: "1", title: "Search & Filter", text: "Verified PGs, Hostels & Flats with real photos.", icon: Search, tone: "sage" },
-  { number: "2", title: "Smart Bidding", text: "Bid directly to lock lower prices with owners.", icon: WalletCards, tone: "peach" },
-  { number: "3", title: "Instant Move-in", text: "Token booking & 100% broker-free transparency.", icon: ShieldCheck, tone: "mint" },
+const cities = [
+  { name: "Kota", properties: "25,000+ Properties", image: kotaAsset.url },
+  { name: "Jaipur", properties: "18,000+ Properties", image: jaipurAsset.url },
+  { name: "Delhi", properties: "45,000+ Properties", image: delhiAsset.url },
+  { name: "Indore", properties: "12,000+ Properties", image: indoreAsset.url },
+  { name: "Bhopal", properties: "10,000+ Properties", image: bhopalAsset.url },
+  { name: "Sikar", properties: "8,500+ Properties", image: sikarAsset.url },
+];
+
+const reasons = [
+  { title: "Smart Bidding", text: "Bid your budget and get instant verified deals.", icon: ShieldCheck, tone: "mint" },
+  { title: "Verified Properties", text: "Every listing is verified by our team for your safety.", icon: BadgeCheck, tone: "peach" },
+  { title: "Best Price Guarantee", text: "Find the best prices compared to other platforms.", icon: WalletCards, tone: "lilac" },
+  { title: "Fully Furnished", text: "Move in with just your suitcase. All essentials included.", icon: Armchair, tone: "sun" },
+  { title: "24/7 Support", text: "Our support team is always here to help you anytime.", icon: Headphones, tone: "sky" },
+  { title: "Flexible Booking", text: "Book for any duration – short term or long term.", icon: CalendarCheck2, tone: "rose" },
+  { title: "Secure & Safe", text: "Verified owners, safe localities and secure living.", icon: LockKeyhole, tone: "green" },
+  { title: "Lowest Price", text: "Get the most affordable stays in top locations.", icon: Tags, tone: "aqua" },
 ];
 
 const trending = [
@@ -186,27 +209,52 @@ function Offers() {
   );
 }
 
-function HowItWorks() {
+function BrowseCities() {
   return (
-    <section id="works" className="works" aria-labelledby="works-title">
-      <LeafSpray className="works-leaves works-leaves-left" /><LeafSpray className="works-leaves works-leaves-right" />
-      <p className="works-side-note">Simple<br />Steps<br />Brighter<br />Futures</p>
-      <div className="works-inner">
-        <div className="works-copy">
-          <p className="section-eyebrow">How Roomhy Works</p>
-          <h2 id="works-title">Find, Compare &amp; Book<br />in <em>Just a Few Steps</em></h2>
-          <p className="works-subtitle">A smarter, simpler and safer way to find your next home.</p>
-          <div className="step-grid">
-            {steps.map(({ number, title, text, icon: Icon, tone }) => <article className="step-card" key={title}><span className={`step-icon ${tone}`}><Icon /></span><div><strong>{title}</strong><p>{text}</p></div><span className="step-number">{number}</span></article>)}
-          </div>
-          <div className="works-actions"><Button className="watch-button"><Play fill="currentColor" /> Watch 1-Min Video Guide</Button><a href="#trending">Learn how it works <ArrowRight /></a></div>
-        </div>
-        <div className="video-column">
-          <div className="video-card"><img src={apartmentImage} alt="Warm furnished Roomhy bedroom video preview" loading="lazy" /><span className="video-badge"><i /> Official Video Guide</span><Button size="icon" className="play-button" aria-label="Play the official Roomhy video guide"><Play fill="currentColor" /></Button><span className="duration">0:60</span></div>
-          <p className="video-note">Step into<br />a Better Tomorrow</p>
-        </div>
+    <section id="cities" className="cities" aria-labelledby="cities-title">
+      <LeafSpray className="cities-leaves cities-leaves-left" /><LeafSpray className="cities-leaves cities-leaves-right" />
+      <p className="cities-note-left">Live<br />Learn<br />Explore<br />Grow ♡</p>
+      <p className="cities-note-center">Different<br />Cities,<br />Same Dreams ♡</p>
+      <p className="cities-note-right">New<br />Places<br />Brighter<br />Futures</p>
+      <div className="cities-heading">
+        <p className="section-eyebrow">Explore Top Destinations</p>
+        <h2 id="cities-title">Browse by <em>Cities</em></h2>
+        <span>Explore properties in India's most popular student cities.</span>
       </div>
-      <div className="works-trust"><AssuranceRow compact /><StudentProof /></div>
+      <Button variant="outline" className="cities-view-all">View all cities <ArrowRight /></Button>
+      <div className="cities-grid">
+        {cities.map(({ name, properties, image }) => (
+          <article className="city-card" key={name}>
+            <div className="city-image-wrap">
+              <img src={image} alt={`${name}, India destination`} width={1200} height={912} loading="lazy" />
+              <span className="city-pin" aria-hidden="true"><MapPin /></span>
+            </div>
+            <div className="city-body"><div><h3>{name}</h3><p>{properties}</p></div><a href="#trending" aria-label={`Browse properties in ${name}`}><ArrowRight /></a></div>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function WhyChoose() {
+  return (
+    <section id="works" className="why-choose" aria-labelledby="why-title">
+      <LeafSpray className="why-leaves why-leaves-right" />
+      <p className="why-note">A Better Place<br />To Be ♡</p>
+      <div className="why-heading">
+        <p className="section-eyebrow">Trusted by Students Across India</p>
+        <h2 id="why-title">Why Choose <em>Roomhy?</em></h2>
+        <span>Built by students, for students. Here's why thousands trust us.</span>
+      </div>
+      <div className="reason-grid">
+        {reasons.map(({ title, text, icon: Icon, tone }) => (
+          <article className="reason-card" key={title}>
+            <span className={`reason-icon ${tone}`}><Icon /></span>
+            <h3>{title}</h3><p>{text}</p>
+          </article>
+        ))}
+      </div>
     </section>
   );
 }
@@ -236,5 +284,5 @@ function Trending() {
 }
 
 function Index() {
-  return <main><Header /><Hero /><Offers /><HowItWorks /><Trending /></main>;
+  return <main><Header /><Hero /><Offers /><BrowseCities /><WhyChoose /><Trending /></main>;
 }
