@@ -5,4 +5,4 @@
 - [x] Remove the incorrect Featured Properties section and purple styling
 - [x] Replace the incorrect process section with Browse by Cities and Why Choose Roomhy
 - [x] Add Trending Stays This Week from the reference
-- [ ] Verify desktop and mobile rendering against the supplied screenshots
+- [x] Verify desktop and mobile rendering against the supplied screenshots
