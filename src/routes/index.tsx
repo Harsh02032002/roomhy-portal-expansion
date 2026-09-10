@@ -307,6 +307,78 @@ function Trending() {
   );
 }
 
+function SmartSavings() {
+  return (
+    <section id="savings" className="savings" aria-labelledby="savings-title">
+      <LeafSpray className="savings-leaves savings-leaves-right" />
+      <p className="savings-note-left">Better<br />Deals<br />Brighter<br />Futures ♡</p>
+      <p className="savings-note-right">Save<br />More<br />Live<br />Better ♡</p>
+      <div className="savings-panel">
+        <div className="savings-copy">
+          <p className="section-eyebrow">Smart Living, Smart Savings</p>
+          <h2 id="savings-title">Smart Bidding.<br /><em>100% Savings.</em></h2>
+          <span className="savings-sub">Connect directly with verified property owners and save thousands on brokerage.</span>
+          <ul>
+            {savingsChecks.map(({ icon: Icon, label }) => (
+              <li key={label}><span className="savings-check"><Icon /></span><strong>{label}</strong></li>
+            ))}
+          </ul>
+        </div>
+        <div className="savings-compare">
+          <article className="compare-card compare-bad">
+            <span className="compare-chip bad">Traditional Way</span>
+            <ul>{traditionalWay.map((item) => <li key={item}><X /> {item}</li>)}</ul>
+          </article>
+          <span className="compare-vs" aria-hidden="true">VS</span>
+          <article className="compare-card compare-good">
+            <span className="compare-chip good">With Roomhy</span>
+            <ul>{roomhyWay.map((item) => <li key={item}><Check /> {item}</li>)}</ul>
+          </article>
+        </div>
+        <div className="savings-image-wrap">
+          <img src={savingsPlantAsset.url} alt="Plant growing out of saved coins" width={768} height={768} loading="lazy" />
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function StudentsSay() {
+  return (
+    <section id="reviews" className="reviews" aria-labelledby="reviews-title">
+      <LeafSpray className="reviews-leaves reviews-leaves-left" />
+      <p className="reviews-note-left">Students<br />Today<br />Thriving<br />Tomorrow ♡</p>
+      <p className="reviews-note-right">Same<br />City<br />New<br />Stories ♡</p>
+      <div className="reviews-heading">
+        <p className="section-eyebrow">Real Stories, Real Students</p>
+        <h2 id="reviews-title">What Students <em>Say</em></h2>
+        <span>Trusted by 50,000+ students across India</span>
+      </div>
+      <div className="reviews-proof" aria-label="50,000 plus happy students">
+        <span className="avatars" aria-hidden="true"><i>H</i><i>A</i><i>R</i></span>
+        <span><strong>50,000+ happy students</strong><small>Finding a better tomorrow</small></span>
+        <ArrowRight />
+      </div>
+      <div className="reviews-grid">
+        {reviews.map(({ name, role, quote, tone }) => (
+          <article className="review-card" key={name}>
+            <div className="review-head">
+              <span className={`review-avatar ${tone}`}>{name.split(" ").map((part) => part[0]).join("")}</span>
+              <div><h3>{name}</h3><p>{role}</p></div>
+              <span className="review-quote-mark" aria-hidden="true">&ldquo;</span>
+            </div>
+            <div className="review-stars" aria-label="5 star rating">
+              {Array.from({ length: 5 }).map((_, index) => <Star key={index} fill="currentColor" strokeWidth={0} />)}
+            </div>
+            <p className="review-text">{quote}</p>
+          </article>
+        ))}
+      </div>
+      <Button variant="outline" className="reviews-more">Read More Reviews <ArrowRight /></Button>
+    </section>
+  );
+}
+
 function Index() {
-  return <main><Header /><Hero /><Offers /><BrowseCities /><WhyChoose /><Trending /></main>;
+  return <main><Header /><Hero /><Offers /><BrowseCities /><WhyChoose /><Trending /><SmartSavings /><StudentsSay /></main>;
 }
