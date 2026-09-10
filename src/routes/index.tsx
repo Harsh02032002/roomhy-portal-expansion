@@ -8,6 +8,7 @@ import {
   BedDouble,
   Building2,
   CalendarCheck2,
+  Check,
   CheckCircle2,
   ChevronDown,
   Headphones,
@@ -20,10 +21,12 @@ import {
   Menu,
   Search,
   ShieldCheck,
+  Star,
   Tags,
   Users,
   UserRound,
   WalletCards,
+  X,
   Zap,
 } from "lucide-react";
 
@@ -32,6 +35,7 @@ import pgAsset from "@/assets/offer-pg.jpg.asset.json";
 import hostelAsset from "@/assets/offer-hostel.jpg.asset.json";
 import colivingAsset from "@/assets/offer-coliving.jpg.asset.json";
 import apartmentAsset from "@/assets/offer-apartment.jpg.asset.json";
+import savingsPlantAsset from "@/assets/savings-plant.jpg.asset.json";
 import kotaAsset from "@/assets/city-kota.jpg.asset.json";
 import jaipurAsset from "@/assets/city-jaipur.jpg.asset.json";
 import delhiAsset from "@/assets/city-delhi.jpg.asset.json";
