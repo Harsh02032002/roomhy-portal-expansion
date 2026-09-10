@@ -113,6 +113,26 @@ const trending = [
   { name: "ROOMHYPROP CREST HL Residency", location: "Kota", price: "₹2,500", image: colivingImage },
 ];
 
+const savingsChecks = [
+  { icon: ShieldCheck, label: "No Hidden Charges" },
+  { icon: UserRound, label: "Direct Owner Contact" },
+  { icon: CalendarCheck2, label: "Transparent Pricing" },
+];
+
+const traditionalWay = ["Pay Brokerage", "Extra Charges", "Multiple Calls", "Time Consuming", "Expensive"];
+const roomhyWay = ["Smart Bidding", "No Hidden Charges", "Direct Owner", "Quick & Easy", "Best Prices"];
+
+const reviews = [
+  { name: "Rahul Sharma", role: "IIT JEE Student, Kota", quote: "Roomhy made finding my hostel so easy! Smart bidding and no hidden charges. Highly recommended!", tone: "rose" },
+  { name: "Priya Patel", role: "NEET Student, Sikar", quote: "Great platform! I found a safe PG near my college within a day. The owner was very cooperative.", tone: "peach" },
+  { name: "Vikram Singh", role: "Allen Student, Kota", quote: "Verified properties and direct owner contact saved me both money and time.", tone: "sky" },
+  { name: "Aman Gupta", role: "Coaching Student, Jaipur", quote: "Super smooth experience. Booked my room online without any agent hassle.", tone: "lilac" },
+  { name: "Sneha Reddy", role: "Medical Student, Hyderabad", quote: "Best app for student stays. Verified owners and smooth digital check-in process.", tone: "sun" },
+  { name: "Rohan Kapoor", role: "Engineering Student, Pune", quote: "Saved ₹12,000 on annual rent using Smart Bidding. Couldn't be happier!", tone: "sky" },
+  { name: "Anjali Mehta", role: "IT Professional, Indore", quote: "Love the variety of options. Co-living spaces are amazing and budget friendly.", tone: "peach" },
+  { name: "Karan Verma", role: "Student, Delhi University", quote: "Extremely easy to search and compare PGs. Got an instant discount through bidding!", tone: "rose" },
+];
+
 function Brand() {
   return <a className="brand" href="#top" aria-label="ROOMHY home">ROOMHY<span>.com</span></a>;
 }
